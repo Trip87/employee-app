@@ -1,0 +1,16 @@
+.card-user {
+    margin: 20px;
+    width: 70%;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+
+    
+}
+
+.user__img {
+    border-radius: 50%;
+    border: 2px solid red;
+    width: 60px;
+}

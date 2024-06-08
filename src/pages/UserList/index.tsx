@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
-import { EmployeeContext } from "../../Context/AppContext";
+// import { EmployeeContext } from "../../Context/AppContext";
+import { AppContext } from "../../Context/AppContext";
+import Card from "../../components/Card/Card";
+import './index.scss';
 
 // export type Employee = {
 //   id: number;
@@ -16,25 +19,31 @@ import { EmployeeContext } from "../../Context/AppContext";
 // };
 
 const UserList = () => {
-  const { employees, deleteEmployee } = useContext(EmployeeContext);
+  const { employees } = useContext(AppContext);
 
   return (
-    <div>
+    <>
       <h1>USER LIST</h1>
       <ul>
         {employees.map((employee) => (
           <li key={employee.id}>
-            <h2>
-              {employee.firstName} {employee.lastName}
-            </h2>
-            <img src={employee.image} alt={employee.firstName} />
-            <button onClick={() => deleteEmployee(employee.id)}>
-              USUŃ PRACOWNIKA
-            </button>
+            <Card className="card-user">
+              <h2>
+                {employee.firstName} {employee.lastName}
+              </h2>
+              <img className="user__img" src={employee.image} alt={employee.firstName} />
+              <button onClick={() => console.log('delete')}>
+                USUŃ PRACOWNIKA
+              </button>
+
+              <p>lorem </p>
+              <p>lorem </p>
+
+            </Card>
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 
