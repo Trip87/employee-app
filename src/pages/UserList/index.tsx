@@ -8,7 +8,7 @@ const UserList = () => {
 
   return (
     <div>
-      <h1>USER LIST</h1>
+      <h2>USER LIST</h2>
       <ul>
         {employees.map((employee) => (
           <li key={employee.id}>
