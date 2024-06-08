@@ -1,3 +1,5 @@
+@import './variables';
+
 .card-user {
     margin: 20px;
     width: 70%;
@@ -13,4 +15,10 @@
     border-radius: 50%;
     border: 2px solid red;
     width: 60px;
+}
+
+
+h1 {
+    color: $primary-color;
+    font-size: $text-size;
 }
