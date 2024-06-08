@@ -17,7 +17,7 @@ export {};
 //   price: number;
 // };
 
-// type ProductContextType = {
+// type EmployeeContextType = {
 //   products: Product[];
 //   add: (product: Product) => void;
 //   remove: (id: number) => void;
@@ -29,7 +29,7 @@ export {};
 // // aby móc pobrać context w komponentach musimy użyc "export"
 
 // export const ProductContext = createContext<ProductContextType>(
-//   {} as ProductContextType
+//   {} as ProductContextType,
 // );
 
 // // krok 3 - tworzenie naszego providera z propsami
