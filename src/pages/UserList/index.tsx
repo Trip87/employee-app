@@ -22,15 +22,15 @@ const UserList = () => {
   const { employees } = useContext(AppContext);
 
   return (
-    <>
+    <div>
       <h1>USER LIST</h1>
       <ul>
         {employees.map((employee) => (
           <li key={employee.id}>
             <Card className="card-user">
-              <h2>
+              <h3>
                 {employee.firstName} {employee.lastName}
-              </h2>
+              </h3>
               <img className="user__img" src={employee.image} alt={employee.firstName} />
               <button onClick={() => console.log('delete')}>
                 USUŃ PRACOWNIKA
@@ -43,7 +43,7 @@ const UserList = () => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
