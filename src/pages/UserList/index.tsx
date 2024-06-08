@@ -16,6 +16,7 @@ import { EmployeeContext } from "../../Context/AppContext";
 // };
 
 const UserList = () => {
+<<<<<<< HEAD
   const { employees, deleteEmployee } = useContext(EmployeeContext);
 
   return (
@@ -36,6 +37,9 @@ const UserList = () => {
       </ul>
     </div>
   );
+=======
+  return <div></div>;
+>>>>>>> e5aadb6 (navigation)
 };
 
 export default UserList;
