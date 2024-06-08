@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound";
 import UserList from "./pages/UserList";
 import UserDetails from "./pages/UserDetails";
 import AddNewWorker from "./pages/AddNewWorker";
-import Search from "./components/Search";
+// import Search from "./components/Search";
 
 function App() {
   return (
@@ -19,7 +19,6 @@ function App() {
         <Route path="/user-list/:userID" element={<UserDetails />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/add-new-worker" element={<AddNewWorker />} />
-        <Search data={data} />
       </Routes>
     </div>
   );
