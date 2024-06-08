@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export type Employee = {
-  id: number;
+ id: number;
  firstName: string;
  lastName: string;
  phone: number;
