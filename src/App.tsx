@@ -1,7 +1,7 @@
 import React from "react";
-
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
+import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import UserList from "./pages/UserList";
@@ -12,6 +12,7 @@ import Search from "./components/Search";
 function App() {
   return (
     <div className="App">
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/user-form" element={<UserForm />} /> */}
