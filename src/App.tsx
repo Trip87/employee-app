@@ -9,8 +9,6 @@ import UserDetails from "./pages/UserDetails";
 import AddNewWorker from "./pages/AddNewWorker";
 import Search from "./components/Search";
 
-const data = ["Apple", "Banana", "Orange", "Mango", "Pineapple", "Strawberry"];
-
 function App() {
   return (
     <div className="App">
