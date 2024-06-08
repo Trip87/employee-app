@@ -1,4 +1,48 @@
-export {};
+import { createContext } from "react";
+import useFetchEmployees, { Employee } from "./hooks/useAppContext";
+
+type EmployeeContextType = {
+  employees: Employee[];
+  addEmployee: (employee: Employee) => void;
+  deleteEmployee: (id: number) => void;
+  //   editEmployee: (employee: Employee) => void;
+  fetchEmployees: () => void;
+  loading: boolean;
+};
+
+export const EmployeeContext = createContext<EmployeeContextType>(
+  {} as EmployeeContextType
+);
+
+type Props = {
+  children: JSX.Element | JSX.Element[];
+};
+
+export const EmployeeContextProvider = ({ children }: Props) => {
+  const {
+    employees,
+    loading,
+    fetchEmployees,
+    addEmployee,
+    deleteEmployee,
+    // editEmployee,
+  } = useFetchEmployees();
+
+  return (
+    <EmployeeContext.Provider
+      value={{
+        employees,
+        addEmployee,
+        deleteEmployee,
+        // editEmployee,
+        fetchEmployees,
+        loading,
+      }}
+    >
+      {children}
+    </EmployeeContext.Provider>
+  );
+};
 
 // // krok 1 - tworzenie typu kontekstu
 
@@ -28,10 +72,6 @@ export {};
 // // {} as ProductContextType - obietnica, że obiekt pusty jest typu ProductContextType
 // // aby móc pobrać context w komponentach musimy użyc "export"
 
-// export const ProductContext = createContext<ProductContextType>(
-//   {} as ProductContextType
-// );
-
 // // krok 3 - tworzenie naszego providera z propsami
 
 // type Props = {
@@ -40,14 +80,6 @@ export {};
 
 // export const ProductContextProvider = ({ children }: Props) => {
 //   const [products, setProducts] = useState<Product[]>([]);
-
-//   const add = (product: Product) => {
-//     setProducts((prev) => [...prev, product]);
-//   };
-
-//   const remove = (id: number) => {
-//     setProducts((prev) => prev.filter((product) => product.id !== id));
-//   };
 
 //   const getSum = () => {
 //     // I opcja
