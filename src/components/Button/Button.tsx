@@ -39,7 +39,7 @@ const Button:React.FC<ButtonProps>= ({
     }
   )
   return <button className={buttonClasses} onClick={onClick} disabled={disabled} type={type} >
-    {icon && <img src={icon}></img>}
+    {/* {icon && <img src={icon}></img>} */}
     {!hideLabel ? label : ''}
     </button>;
 };
