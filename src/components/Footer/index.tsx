@@ -11,7 +11,7 @@ const Footer = () => {
         </li>
         <li className="footer__item blue">
           Andrzej
-          <a href="https://www.linkedin.com/in/andrzej" className="footer__link blue">LinkedIn</a>
+          <a target="_blank" href="https://www.linkedin.com/in/andrzej" className="footer__link blue">LinkedIn</a>
         </li>
         <li className="footer__item pink">
           Kunegunda

@@ -88,8 +88,8 @@ const UserList = () => {
 
       {showModal && selectedEmployee && (
         <Modal
-          firstName={selectedEmployee.firstName}
-          lastName={selectedEmployee.lastName}
+          {...selectedEmployee}
+
           onClose={closeModal}
         />
       )}

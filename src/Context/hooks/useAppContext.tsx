@@ -12,7 +12,22 @@ export type Employee = {
   };
   email: string;
   image: string;
+  maidenName: string;
+  age: number;
+  gender: string;
+  username: string;
+  password: string;
+  bloodGroup: string;
+  height: string;
+  weight: string;
+  eyeColor: string;
+  hair: {
+    color: string;
+    type: string;
+  };
+  ip: string;
 };
+
 
 export const useAppContext = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
