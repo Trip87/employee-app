@@ -34,16 +34,16 @@ const AddNewWorker: React.FC = () => {
 
   return (
     <div className="add-worker">
-      <h1 className="add-worker__title">Dodaj Pracownika</h1>
+      <h2 className="add-worker__title">Dodaj Pracownika</h2>
       <form className="add-worker__form" onSubmit={handleSubmit}>
         <input type="text" name="firstName" value={employee.firstName} onChange={handleChange} placeholder="Imię" required />
         <input type="text" name="lastName" value={employee.lastName} onChange={handleChange} placeholder="Nazwisko" required />
         <input type="date" name="birthDate" value={employee.birthDate} onChange={handleChange} placeholder="Data urodzenia" required />
         <input type="text" name="address" value={employee.address.address} onChange={handleChange} placeholder="Ulica" required />
         <input type="text" name="city" value={employee.address.city} onChange={handleChange} placeholder="Miejscowość" required />
-        <input type="text" name="email" value={employee.email} onChange={handleChange} placeholder="Email" required />
-        <input type="text" name="phone" value={employee.phone} onChange={handleChange} placeholder="Numer telefonu" required />
-        <input type="text" name="image" value={employee.image} onChange={handleChange} placeholder="URL do zdjęcia" required />
+        <input type="email" name="email" value={employee.email} onChange={handleChange} placeholder="Email" required />
+        <input type="tel" name="phone" value={employee.phone} onChange={handleChange} placeholder="Numer telefonu" required />
+        <input type="url" name="image" value={employee.image} onChange={handleChange} placeholder="URL do zdjęcia" required />
         <button type="submit">Dodaj</button>
       </form>
     </div>

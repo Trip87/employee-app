@@ -15,27 +15,27 @@ export type Employee = {
 };
 
 export const useAppContext = () => {
-  const [employees, setEmployees] = useState<Employee[]>([]);
+  const [fetchedEmployees, setFetchedEmployees] = useState<Employee[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchEmployees = async () => {
     try {
       setIsLoading(true);
-      const res = await fetch('https://dummyjson.com/users');
+      const res = await fetch("https://dummyjson.com/users");
 
-      if (!res.ok) throw new Error('Cannot fetch employee');
+      if (!res.ok) throw new Error("Cannot fetch employee");
 
       const { users } = await res.json();
 
-      if (users) setEmployees(users);
+      if (users) setFetchedEmployees(users);
     } catch (error) {
-      console.error('Error fetching users:', error);
+      console.error("Error fetching users:", error);
     } finally {
       setIsLoading(false);
     }
   };
 
-  // paginacja
+ // paginacja
   // const fetchEmployeesLimit = async () => {
 
   //   try {
@@ -58,7 +58,7 @@ export const useAppContext = () => {
 
   return {
     isLoading,
-    employees,
+    fetchedEmployees,
   };
 };
 
