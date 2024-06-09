@@ -25,7 +25,6 @@ const UserList = () => {
     setShowModal(false);
   }
 
-  console.log('employee limit')
 
   return (
     <div className="user-list">
