@@ -1,0 +1,39 @@
+.footer {
+    
+    width: 100%;
+    bottom: 0;
+    background-color:#282c34;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  
+    &__list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  
+      &.pink {
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: pink;
+        }
+      }
+  
+      &.blue {
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: aqua;
+        }
+      }
+  
+      li {
+        margin: 10px 15px;
+        font-size: 18px;
+      }
+    }
+  }
