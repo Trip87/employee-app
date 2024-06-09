@@ -1,11 +1,11 @@
 .footer {
-    
     width: 100%;
     bottom: 0;
-    background-color:#282c34;
+    background-color: #282c34;
     padding: 20px;
     text-align: center;
     color: white;
+    letter-spacing: 1px;
   
     &__list {
       list-style-type: none;
@@ -14,26 +14,34 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+    }
   
-      &.pink {
+    &__item {
+      margin: 10px 15px;
+      font-size: 18px;
+      text-align: left;
+      transition: color 0.3s ease;
+  
+      &.pink:hover {
+        color: pink;
+      }
+  
+      &.blue:hover {
+        color: aqua;
+      }
+  
+      .footer__link {
+        display: block;
+        padding: 10px 0;
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+        margin-top: 5px;
         transition: color 0.3s ease;
   
         &:hover {
-          color: pink;
+          color: #61dafb;
         }
-      }
-  
-      &.blue {
-        transition: color 0.3s ease;
-  
-        &:hover {
-          color: aqua;
-        }
-      }
-  
-      li {
-        margin: 10px 15px;
-        font-size: 18px;
       }
     }
   }
