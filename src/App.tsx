@@ -21,10 +21,13 @@ function App() {
     i18n.changeLanguage(i18n.language === Locale.PL ? Locale.EN : Locale.PL);
   };
   return (
+
     <div className="App">
       <button onClick={changeLanguage}>
         <span>{i18n.language}</span>
       </button>
+    <div className="app">
+      <div className="sidebar">
       <Nav />
       </div>
       <div className="content">
@@ -37,6 +40,8 @@ function App() {
         <Route path="/add-new-worker" element={<AddNewWorker />} />
       </Routes>
       <Footer />
+      </div>
+    </div>
     </div>
   );
 }
