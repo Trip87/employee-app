@@ -9,7 +9,7 @@ type Props = {
   lastName: string;
 }
 
-const Modal = ({onClose, firstName, lastName}: Props) => {
+const Modal = ({ onClose, firstName, lastName }: Props) => {
 
   const { employees } = useContext(AppContext);
 
@@ -23,7 +23,7 @@ const Modal = ({onClose, firstName, lastName}: Props) => {
       </div>
     </div>,
     modalRoot
-  ): null;
+  ) : null;
 };
 
 export default Modal
