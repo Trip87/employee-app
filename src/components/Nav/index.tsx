@@ -4,33 +4,83 @@ import "./Nav.scss";
 import { useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { useTranslation } from "react-i18next";
+import "./index.scss";
+import "./index.scss";
+import Button from "../Button/Button";
 
 const Nav = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => false);
   const { t } = useTranslation();
 
+  const Nav = () => {
+    const [isDarkMode, setIsDarkMode] = useState(() => false);
+
+    return (
+      <div>
+        <nav className="">
+          <ul className="nav">
+            <DarkModeToggle
+              onChange={setIsDarkMode}
+              checked={isDarkMode}
+              size={80}
+            />
+
+            <Link
+              to="/"
+              className="button button--primary button--content button--large btn"
+            >
+              {t("app.nav.home")}
+            </Link>
+
+            <Link
+              to="/user-list"
+              className="button button--primary button--content button--large btn"
+            >
+              {t("app.nav.employee-list")}
+            </Link>
+
+            <Link
+              to="/add-new-worker"
+              className="button button--primary button--content button--large btn"
+            >
+              {t("app.nav.new-employee")}
+            </Link>
+          </ul>
+        </nav>
+      </div>
+    );
+  };
   return (
     <div>
-      <nav className="nav">
-        <ul>
+      <nav className="">
+        <ul className="nav">
           <DarkModeToggle
             onChange={setIsDarkMode}
             checked={isDarkMode}
             size={80}
           />
-          <li>
-            <Link to="/">{t("app.nav.home")}</Link>
-          </li>
-          <li>
-            <Link to="/user-list">{t("app.nav.employee-list")}</Link>
-          </li>
-          <li>
-            <Link to="/add-new-worker">{t("app.nav.new-employee")}</Link>
-          </li>
+          
+            
+            <Link to="/" className="button button--primary button--content button--large btn">
+            {t("app.nav.home")}
+            </Link>
+
+          
+          
+          <Link to="/user-list" className="button button--primary button--content button--large btn" >
+          {t("app.nav.employee-list")}
+             </Link>
+            
+          
+            
+          <Link to="/add-new-worker" className="button button--primary button--content button--large btn">
+          {t("app.nav.new-employee")}
+             </Link>
+
+          
         </ul>
       </nav>
     </div>
   );
 };
-
 export default Nav;
