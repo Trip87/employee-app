@@ -13,8 +13,11 @@ import AddNewWorker from "./pages/AddNewWorker";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
+      <div className="sidebar">
       <Nav />
+      </div>
+      <div className="content">
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/user-form" element={<UserForm />} /> */}
@@ -23,6 +26,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/add-new-worker" element={<AddNewWorker />} />
       </Routes>
+      </div>
     </div>
   );
 }

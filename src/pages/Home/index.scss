@@ -1,15 +1,17 @@
+@import  "../../App.scss";
+
 div {
   font-family: "Montserrat";
 }
 
 .carousel {
   // margin: 20px;
-  background-color: #dee4ef;
+  background-color: $text-color;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 200px;
+  height: 600px;
   margin: 30px;
 
   img {

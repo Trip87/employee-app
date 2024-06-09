@@ -1,3 +1,5 @@
+@import "../../App.scss";
+
 .button {
   background-color: #C3C6BF;
   padding: 0 16px;
@@ -19,7 +21,7 @@
 
     &:hover:not(.button--disabled),
     &:focus:not(.button--disabled) {
-      background-color: #0062cc;
+      background-color: $secondary-color;
     }
   }
 

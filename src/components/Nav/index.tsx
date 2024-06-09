@@ -1,27 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Nav.scss";
-
+import "./index.scss";
 import { useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
+import Button from "../Button/Button";
 
 const Nav = () => {
-
   const [isDarkMode, setIsDarkMode] = useState(() => false);
-
 
   return (
     <div>
-      <nav className="nav">
-        <ul>
+      <nav className="">
+        <ul className="nav">
           <DarkModeToggle
             onChange={setIsDarkMode}
             checked={isDarkMode}
             size={80}
           />
-          <li><Link to="/">HOME</Link></li>
-          <li><Link to="/user-list">ALL EMPLOYEES</Link></li>
-          <li><Link to="/add-new-worker">ADD NEW EMPLOYEE</Link></li>
+          
+            
+            <Link to="/" className="button button--primary button--content button--large btn">
+            HOME PAGE
+            </Link>
+
+          
+          
+          <Link to="/user-list" className="button button--primary button--content button--large btn" >
+            ALL EMPLOYEES
+             </Link>
+            
+          
+            
+          <Link to="/add-new-worker" className="button button--primary button--content button--large btn">
+            ADD NEW EMPLOYEE
+             </Link>
+
+          
         </ul>
       </nav>
     </div>
