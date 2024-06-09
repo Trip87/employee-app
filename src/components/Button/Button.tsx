@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 
 type ButtonProps= {
-  label : string,
+  label: string | JSX.Element,
   hideLabel?:boolean ,
   icon?:string,
   variant?:'primary'|'secondary'|'danger',
@@ -13,6 +13,7 @@ type ButtonProps= {
   onClick?:()=>void,
   disabled?:boolean,
   type?: 'submit'|'button'|'reset',
+  className?: string;
 }
 const Button:React.FC<ButtonProps>= ({
   label,

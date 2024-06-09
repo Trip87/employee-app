@@ -3,7 +3,7 @@ import './Card.scss';
 
 type Props = {
     children: JSX.Element | JSX.Element[];
-    className: string;
+    className?: string;
 }
 
 const Card = ({children, className}: Props) => {

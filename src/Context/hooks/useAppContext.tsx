@@ -18,6 +18,8 @@ export const useAppContext = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [employeesLimit, setEmployeesLimit] = useState<Employee[]>([])
+
   const fetchEmployees = async () => {
     try {
       setIsLoading(true);
@@ -34,6 +36,23 @@ export const useAppContext = () => {
       setIsLoading(false);
     }
   };
+
+  // paginacja
+  // const fetchEmployeesLimit = async () => {
+
+  //   try {
+  //     const res = await fetch('http://dummyjson.com/users?limit=5&skip=10&select=firstName,age');
+  //     if (!res.ok) throw new Error("Cannot fetch employee");
+
+  //     const { users } = await res.json();
+
+  //     if (users) setEmployees(users);
+  //     console.log(users)
+
+  //   } catch (e) {
+  //     console.log(e)
+  //   }
+  // }
 
   useEffect(() => {
     fetchEmployees();
