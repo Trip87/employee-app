@@ -34,6 +34,7 @@ const Footer = () => {
           <a href="https://www.linkedin.com/in/sandra" className="footer__link pink">LinkedIn</a>
         </li>
       </ul>
+      <h1>Copyright 2024</h1>
     </div>
   </>
   )
