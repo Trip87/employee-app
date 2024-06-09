@@ -26,6 +26,8 @@ function App() {
         <span>{i18n.language}</span>
       </button>
       <Nav />
+      </div>
+      <div className="content">
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/user-form" element={<UserForm />} /> */}

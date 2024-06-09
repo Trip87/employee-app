@@ -6,7 +6,7 @@ import EmployeeList from "../../components/EmployeeList/EmployeeList";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from "../../components/Card/Card";
-import Button from "../../components/Button";
+import Button from "../../components/Button/Button";
 
 const Home = () => {
 
@@ -42,8 +42,8 @@ const Home = () => {
           <img src={employee.image} alt={employee.firstName} />
         </Card>
       ))}
-    </Carousel>;
-  </div>;
+    </Carousel>
+  </div>
 };
 
 export default Home;
