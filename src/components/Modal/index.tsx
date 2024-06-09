@@ -5,33 +5,11 @@ import { AppContext } from '../../Context/AppContext';
 import Button from '../Button/Button';
 import { Employee } from '../../Context/hooks/useAppContext';
 
-// export type EmployeeType = Employee &{
-//   onClose: () => void;
-//   maidenName: string;
-//   age: number;
-//   gender: string;
-//   username: string;
-//   password: string;
-//   bloodGroup: string;
-//   height: string;
-//   weight: string;
-//   eyeColor: string;
-//   hair: {
-//     color: string;
-//     type: string;
-//   };
-//   ip: string;
-
-
-// };
-
 type ModalProps = {
   onClose: () => void;
 } & Employee;
 
 const Modal = ({ onClose, firstName, lastName, birthDate, phone, email, image, address, maidenName, age, gender, username, password, bloodGroup, height, weight, hair, eyeColor, ip }: ModalProps) => {
-
-  // const { employees } = useContext(AppContext);
 
   const modalRoot = document.getElementById("modal-root");
   return modalRoot ? ReactDOM.createPortal(

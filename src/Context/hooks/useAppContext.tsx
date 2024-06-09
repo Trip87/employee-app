@@ -1,19 +1,5 @@
 import { useState, useEffect } from "react";
 
-// export type Employee = {
-//   id: number;
-//   firstName: string;
-//   lastName: string;
-//   phone: number;
-//   birthDate: number;
-//   address: {
-//     address: string;
-//     city: string;
-//   };
-//   email: string;
-//   image: string;
-// };
-
 export type Employee = {
   id: number;
   firstName: string;
