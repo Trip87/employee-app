@@ -1,5 +1,19 @@
 import { useState, useEffect } from "react";
 
+// export type Employee = {
+//   id: number;
+//   firstName: string;
+//   lastName: string;
+//   phone: number;
+//   birthDate: number;
+//   address: {
+//     address: string;
+//     city: string;
+//   };
+//   email: string;
+//   image: string;
+// };
+
 export type Employee = {
   id: number;
   firstName: string;
@@ -12,7 +26,22 @@ export type Employee = {
   };
   email: string;
   image: string;
+  maidenName: string;
+  age: number;
+  gender: string;
+  username: string;
+  password: string;
+  bloodGroup: string;
+  height: string;
+  weight: string;
+  eyeColor: string;
+  hair: {
+    color: string;
+    type: string;
+  };
+  ip: string;
 };
+
 
 export const useAppContext = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);

@@ -90,6 +90,24 @@ const UserList = () => {
         <Modal
           firstName={selectedEmployee.firstName}
           lastName={selectedEmployee.lastName}
+          phone={selectedEmployee.phone}
+          email={selectedEmployee.email}
+          birthDate={selectedEmployee.birthDate}
+          address={selectedEmployee.address}
+          image={selectedEmployee.image}
+          id={selectedEmployee.id}
+          maidenName={selectedEmployee.maidenName}
+          age={selectedEmployee.age}
+          gender={selectedEmployee.gender}
+          username={selectedEmployee.username}
+          password={selectedEmployee.password}
+          bloodGroup={selectedEmployee.bloodGroup}
+          height={selectedEmployee.height}
+          weight={selectedEmployee.weight}
+          hair={selectedEmployee.hair}
+          eyeColor={selectedEmployee.eyeColor}
+          ip={selectedEmployee.ip}
+
           onClose={closeModal}
         />
       )}
