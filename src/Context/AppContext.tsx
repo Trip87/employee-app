@@ -23,7 +23,7 @@ export const AppContextProvider = ({ children }: Props) => {
     if (fetchedEmployees.length > 0) {
       setEmployees(fetchedEmployees);
     }
-  }, [fetchedEmployees]);
+  }, [fetchedEmployees.length]);
 
   return (
     <AppContext.Provider value={{ employees, isLoading, setEmployees }}>
