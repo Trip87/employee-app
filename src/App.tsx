@@ -8,6 +8,7 @@ import UserList from "./pages/UserList";
 import UserDetails from "./pages/UserDetails";
 import AddNewWorker from "./pages/AddNewWorker";
 import { useTranslation } from "react-i18next";
+import Footer from "./components/Footer";
 // import Search from "./components/Search";
 export enum Locale {
   EN = "en",
@@ -33,6 +34,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/add-new-worker" element={<AddNewWorker />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
