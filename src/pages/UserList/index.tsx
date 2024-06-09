@@ -7,13 +7,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Modal from "../../components/Modal";
 import { Employee } from "../../Context/hooks/useAppContext";
+import { Link } from "react-router-dom";
+// import { Employee } from "../../Context/hooks/useAppContext";
+// import { Employee } from "../../Context/hooks/useAppContext";
 
 const UserList = () => {
   const { employees } = useContext(AppContext);
 
   const [showModal, setShowModal] = useState(false);
 
-  const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
+  const [selectedEmployee, setSelectedEmployee] = useState<Employee | null >(null);
 
   const openModal = (employee: Employee) => {
     setSelectedEmployee(employee)
@@ -46,7 +49,6 @@ const UserList = () => {
         <p>desc</p>
         <p>view</p>
 
-
       </Card>
       <ul className="user-list__items">
         {employees.map((employee) => (
@@ -75,6 +77,24 @@ const UserList = () => {
         <Modal
           firstName={selectedEmployee.firstName}
           lastName={selectedEmployee.lastName}
+          phone={selectedEmployee.phone}
+          email={selectedEmployee.email}
+          birthDate={selectedEmployee.birthDate}
+          address={selectedEmployee.address}
+          image={selectedEmployee.image}
+          id={selectedEmployee.id}
+          maidenName={selectedEmployee.maidenName}
+          age={selectedEmployee.age}
+          gender={selectedEmployee.gender}
+          username={selectedEmployee.username}
+          password={selectedEmployee.password}
+          bloodGroup={selectedEmployee.bloodGroup}
+          height={selectedEmployee.height}
+          weight={selectedEmployee.weight}
+          hair={selectedEmployee.hair}
+          eyeColor={selectedEmployee.eyeColor}
+          ip={selectedEmployee.ip}
+
           onClose={closeModal}
         />
       )}

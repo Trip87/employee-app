@@ -14,15 +14,21 @@ import AddNewWorker from "./pages/AddNewWorker";
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/user-form" element={<UserForm />} /> */}
-        <Route path="/user-list" element={<UserList />} />
-        <Route path="/user-list/:userID" element={<UserDetails />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/add-new-worker" element={<AddNewWorker />} />
-      </Routes>
+      <div className="navigation">
+
+        <Nav />
+      </div>
+      <div className="routes">
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/user-form" element={<UserForm />} /> */}
+          <Route path="/user-list" element={<UserList />} />
+          <Route path="/user-list/:userID" element={<UserDetails />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/add-new-worker" element={<AddNewWorker />} />
+        </Routes>
+      </div>
     </div>
   );
 }
