@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export type Employee = {
   id: number;
   firstName: string;
   lastName: string;
-  phone: number;
-  birthDate: number;
+  phone: string;
+  birthDate: string;
   address: {
     address: string;
     city: string;
@@ -18,20 +18,18 @@ export const useAppContext = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const [employeesLimit, setEmployeesLimit] = useState<Employee[]>([])
-
   const fetchEmployees = async () => {
     try {
       setIsLoading(true);
-      const res = await fetch("https://dummyjson.com/users");
+      const res = await fetch('https://dummyjson.com/users');
 
-      if (!res.ok) throw new Error("Cannot fetch employee");
+      if (!res.ok) throw new Error('Cannot fetch employee');
 
       const { users } = await res.json();
 
       if (users) setEmployees(users);
     } catch (error) {
-      console.error("Error fetching users:", error);
+      console.error('Error fetching users:', error);
     } finally {
       setIsLoading(false);
     }
