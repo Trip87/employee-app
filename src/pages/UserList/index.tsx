@@ -1,22 +1,22 @@
-import { useContext, useState } from "react";
-import { AppContext } from "../../Context/AppContext";
-import Card from "../../components/Card/Card";
-import "./index.scss";
-import Button from "../../components/Button/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import Modal from "../../components/Modal";
-import { Employee } from "../../Context/hooks/useAppContext";
+import { useContext, useState } from 'react';
+import { AppContext } from '../../Context/AppContext';
+import Card from '../../components/Card/Card';
+import './index.scss';
+import Button from '../../components/Button/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import Modal from '../../components/Modal';
+import { Employee } from '../../Context/hooks/useAppContext';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
+
 
 const UserList = () => {
   const { employees } = useContext(AppContext);
+  const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
-
-  const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(
-    null
-  );
+  const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
 
   const openModal = (employee: Employee) => {
     setSelectedEmployee(employee);
@@ -29,10 +29,15 @@ const UserList = () => {
   };
   const { t } = useTranslation();
 
+  const handleAddEmployee = () => {
+    navigate('/add-new-worker');
+  };
+
   return (
     <div className="user-list">
       <header className="user-list__header">
         <h2 className="user-list__title">{t( "app.nav.employee-list")}</h2>
+        <h2 className="user-list__title">USER LIST</h2>
         <Button
           variant="primary"
           height="large"
@@ -54,6 +59,14 @@ const UserList = () => {
         <p>{t("app.user-list.desc")}</p>
         <p>{t("app.user-list.desc")}</p>
         <p>{t("app.user-list.view")}</p>
+        <p>Image</p>
+        <p>Name</p>
+        <p>Birth Date</p>
+        <p>Email</p>
+        <p>Phone</p>
+        <p>desc</p>
+        <p>desc</p>
+        <p>view</p>
       </Card>
       <ul className="user-list__items">
         {employees.map((employee) => (

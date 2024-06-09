@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export type Employee = {
   id: number;
   firstName: string;
   lastName: string;
-  phone: number;
-  birthDate: number;
+  phone: string;
+  birthDate: string;
   address: {
     address: string;
     city: string;
@@ -30,10 +30,8 @@ export type Employee = {
 
 
 export const useAppContext = () => {
-  const [employees, setEmployees] = useState<Employee[]>([]);
+  const [fetchedEmployees, setFetchedEmployees] = useState<Employee[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  const [employeesLimit, setEmployeesLimit] = useState<Employee[]>([])
 
   const fetchEmployees = async () => {
     try {
@@ -44,7 +42,7 @@ export const useAppContext = () => {
 
       const { users } = await res.json();
 
-      if (users) setEmployees(users);
+      if (users) setFetchedEmployees(users);
     } catch (error) {
       console.error("Error fetching users:", error);
     } finally {
@@ -52,7 +50,7 @@ export const useAppContext = () => {
     }
   };
 
-  // paginacja
+ // paginacja
   // const fetchEmployeesLimit = async () => {
 
   //   try {
@@ -75,7 +73,7 @@ export const useAppContext = () => {
 
   return {
     isLoading,
-    employees,
+    fetchedEmployees,
   };
 };
 
