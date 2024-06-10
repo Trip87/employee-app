@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Nav.scss";
+import "./index.scss";
 import { useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { useTranslation } from "react-i18next";

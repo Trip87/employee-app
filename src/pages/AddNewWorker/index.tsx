@@ -10,14 +10,28 @@ const AddNewWorker: React.FC = () => {
     id: employees.length + 1,
     firstName: '',
     lastName: '',
+    phone: '',
     birthDate: '',
     address: {
       address: '',
       city: '',
     },
-    phone: '',
     email: '',
     image: '',
+    maidenName: '',
+    age: 0,
+    gender: '',
+    username: '',
+    password: '',
+    bloodGroup: '',
+    height: '',
+    weight: '',
+    eyeColor: '',
+    hair: {
+      color: '',
+      type: '',
+    },
+    ip: '',
   });
   const navigate = useNavigate();
 
