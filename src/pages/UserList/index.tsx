@@ -12,11 +12,12 @@ import { useTranslation } from "react-i18next";
 
 
 const UserList = () => {
-  const { employees } = useContext(AppContext);
+  const { employees, setEmployees } = useContext(AppContext);
   const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
+  
 
   const openModal = (employee: Employee) => {
     setSelectedEmployee(employee);
@@ -31,6 +32,11 @@ const UserList = () => {
 
   const handleAddEmployee = () => {
     navigate('/add-new-worker');
+  };
+
+  const handleDeleteEmployee = (id: number) => {
+    const newEmployees = employees.filter((employee) => employee.id!== id);
+    setEmployees(newEmployees);
   };
 
   return (
@@ -89,7 +95,14 @@ const UserList = () => {
               <Button
                 onClick={() => openModal(employee)}
                 className="user-list__btn"
-                label="Viev"
+                label="View"
+                variant="primary"
+                height="large"
+              />
+               <Button
+                onClick={() => handleDeleteEmployee(employee.id)}
+                className="user-list__delete-btn"
+                label="Delete"
                 variant="primary"
                 height="large"
               />
