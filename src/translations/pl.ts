@@ -25,7 +25,6 @@ export default {
     "app.height": "Wzrost",
     "app.weight": "Waga",
     "app.eye-color": "Kolor oczu",
-
     "app.first-name": "Imię",
     "app.last-name": "Nazwisko",
     "app.close": "Zamknij",
@@ -37,5 +36,6 @@ export default {
     "app.search": "Szukaj...",
     "app.user-details": "Szczegóły użytkownika",
     "app.see-more": "Zobacz więcej",
+    "app.delete": "Usuń",
   },
 };

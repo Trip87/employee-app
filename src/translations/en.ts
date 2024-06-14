@@ -4,7 +4,6 @@ export default {
     "app.employee-list": "Employee list",
     "app.new-employee": "Add new employee",
     "app.image": "Image",
-
     "app.name": "Name",
     "app.birth-date": "Date of birth",
     "app.email": "Email",
@@ -12,19 +11,16 @@ export default {
     "app.desc": "Description",
     "app.view": "View",
     "app.user-name": "User name",
-   
     "app.ip": "IP",
     "app.address": "Address",
     "app.street": "Street",
-
     "app.password": "Password",
-   
     "app.age": "Age",
     "app.maiden-name": "Maiden name",
     "app.gender": "Gender",
-  "app.blood-group": "Blood group",  
-  "app.hair-color": "Hair color",
-  "app.hair-type": "Hair type",
+    "app.blood-group": "Blood group",
+    "app.hair-color": "Hair color",
+    "app.hair-type": "Hair type",
     "app.height": "Height",
     "app.weight": "Weight",
     "app.eye-color": "Eye color",
@@ -40,5 +36,6 @@ export default {
     "app.search": "Search...",
     "app.user-details": "User details",
     "app.see-more": "See more",
+    "app.delete": "Delete",
   },
 };

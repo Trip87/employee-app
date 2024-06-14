@@ -87,14 +87,14 @@ const UserList = () => {
               <Button
                 onClick={() => openModal(employee)}
                 className="user-list__btn"
-                label="View"
+                label={t( "app.view")}
                 variant="primary"
                 height="large"
               />
                <Button
                 onClick={() => handleDeleteEmployee(employee.id)}
                 className="user-list__delete-btn"
-                label="Delete"
+                label={t("app.delete")}
                 variant="primary"
                 height="large"
               />
