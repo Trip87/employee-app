@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import { AppContext } from '../../Context/AppContext';
 import Button from '../Button/Button';
 import { Employee } from '../../Context/hooks/useAppContext';
+import { t } from 'i18next';
 
 type ModalProps = {
   onClose: () => void;
@@ -15,7 +16,7 @@ const Modal = ({ onClose, firstName, lastName, birthDate, phone, email, image, a
   return modalRoot ? ReactDOM.createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <h2 className='modal__title'><b>Name: </b>{firstName} {lastName}</h2>
+        <h2 className='modal__title'><b>{t("app.modal.full-name")} </b>{firstName} {lastName}</h2>
         <section className='modal__section'>
 
           <div className='modal__section-box'>
@@ -23,76 +24,78 @@ const Modal = ({ onClose, firstName, lastName, birthDate, phone, email, image, a
           </div>
 
           <div className="modal__section-box">
-
-            <p><b>User Name:</b> {username}</p>
-            <p><b>Email:</b> {email}</p>
-            <p><b>Phone:</b> {phone}</p>
-            <p><b>IP:</b> {ip}</p>
-            <p><b>Address:</b> {address.address}, {address.city}</p>
-            <p><b>Password:</b> {password}</p>
+         
+            <p><b>{t("app.user-name")}:</b> {username}</p>
+            <p><b>{t("app.email")}:</b> {email}</p>
+            <p><b>{t("app.phone")}:</b> {phone}</p>
+            <p><b>{t("app.ip")}:</b> {ip}</p>
+            <p><b>{t(
+            "app.address"
+          )}:</b> {address.address}, {address.city}</p>
+            <p><b>{t("app.password")}:</b> {password}</p>
           </div>
 
           <div className="modal__section-box">
 
-            <p><b>Date of birth:</b> {birthDate}</p>
-            <p><b>Age</b> {age}</p>
-            <p><b>Maiden Name</b> {maidenName}</p>
-            <p><b>Gender:</b> {gender}</p>
+            <p><b>{t("app.birth-date")}:</b> {birthDate}</p>
+            <p><b>{t("app.age")}:</b> {age}</p>
+            <p><b>{t("app.maiden-name")}:</b> {maidenName}</p>
+            <p><b>{t("app.gender")}:</b> {gender}</p>
           </div>
 
           <div className="modal__section-box">
 
-            <p><b>Blood Group:</b> {bloodGroup}</p>
-            <p><b>Hair color:</b> {hair.color}, Hair type {hair.type}</p>
-            <p><b>Height</b> {height}cm</p>
-            <p><b>Weight:</b> {weight}kg</p>
-            <p><b>Eye color:</b> {eyeColor}</p>
+            <p><b> {t("app.blood-group")}:</b> {bloodGroup}</p>
+            <p><b> {t("app.hair-color")}:</b> {hair.color}, <b>{t("app.hair-type")}</b>: {hair.type}</p>
+            <p><b> {t("app.height")}:</b> {height}cm</p>
+            <p><b> {t("app.weight")}:</b> {weight}kg</p>
+            <p><b> {t("app.eye-color")}:</b> {eyeColor}</p>
           </div>
 
           <div className="modal__section-box modal__section-box--full-width">
             <form className='modal__form'>
               <label htmlFor="firstName">
-                First Name
+              {t("app.first-name")}:
                 <input id='firstName' type="text" />
               </label>
 
               <label htmlFor="lastName">
-                Last Name
+              {t("app.last-name")}:
                 <input id='lastName' type="text" />
               </label>
 
               <label htmlFor="email">
-                Email
+              {t("app.email")}:
                 <input id='email' type="text" />
               </label>
 
               <label htmlFor="password">
-                Password
+              {t("app.password")}:
                 <input id='password' type="text" />
               </label>
 
               <label htmlFor="phone">
-                Phone
+              {t("app.phone")}:
                 <input id='phone' type="text" />
               </label>
 
               <label htmlFor="address">
-                Address
+              {t("app.address")}:
                 <input id='address' type="text" />
               </label>
 
               <label htmlFor="city">
-                City
+              {t("app.city")}:
                 <input id='city' type="text" />
               </label>
 
               <label htmlFor="hairColor">
-                Hair color
+              {t("app.hair-color")}:
                 <input id='hairColor' type="text" />
               </label>
 
               <label htmlFor="weight">
-                Weight
+              {t("app.weight")}:
                 <input id='weight' type="text" />
               </label>
 
@@ -101,7 +104,7 @@ const Modal = ({ onClose, firstName, lastName, birthDate, phone, email, image, a
           </div>
 
 
-        <Button label='Close' onClick={onClose} />
+        <Button label={t("app.close")} onClick={onClose} />
           
         </section>
       </div>
