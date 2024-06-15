@@ -10,9 +10,9 @@ import { Employee } from '../../Context/hooks/useAppContext';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 
+
 const UserList = () => {
   const { employees, setEmployees } = useContext(AppContext);
-  const { fetchedEmployees } = useContext(AppContext);
   const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
@@ -45,14 +45,12 @@ const UserList = () => {
         <h2 className="user-list__title">{t("app.nav.employee-list")}</h2>
         <h2 className="user-list__title">USER LIST</h2>
         <Button
-          onClick={handleAddEmployee}
           variant="primary"
           height="large"
           label={
             <>
               <FontAwesomeIcon icon={faPlus} />
               &nbsp;{t( "app.new-employee")}
-              &nbsp;Add new employees
             </>
           }
         />
@@ -70,7 +68,7 @@ const UserList = () => {
       
       </Card>
       <ul className="user-list__items">
-        {fetchedEmployees.map((employee) => (
+        {employees.map((employee) => (
           <li key={employee.id} className="user-list__item">
             <Card className="user-list__card">
               <img
@@ -84,6 +82,7 @@ const UserList = () => {
               <p className="user-list__description">{employee.birthDate}</p>
               <p className="user-list__description">{employee.email}</p>
               <p className="user-list__description">{employee.phone}</p>
+
               <p className="user-list__description">lorem </p>
               <p className="user-list__description">lorem </p>
               <Button
@@ -100,6 +99,7 @@ const UserList = () => {
                 variant="primary"
                 height="large"
               />
+              {/* {showModal && <Modal firstName={employee.firstName} lastName={employee.lastName} onClose={closeModal} />} */}
             </Card>
           </li>
         ))}
@@ -108,6 +108,7 @@ const UserList = () => {
       {showModal && selectedEmployee && (
         <Modal
           {...selectedEmployee}
+
           onClose={closeModal}
         />
       )}

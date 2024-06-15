@@ -12,21 +12,22 @@ export type Employee = {
   };
   email: string;
   image: string;
-  maidenName?: string;
-  age?: number;
-  gender?: string;
-  username?: string;
-  password?: string;
-  bloodGroup?: string;
-  height?: string;
-  weight?: string;
-  eyeColor?: string;
-  hair?: {
+  maidenName: string;
+  age: number;
+  gender: string;
+  username: string;
+  password: string;
+  bloodGroup: string;
+  height: string;
+  weight: string;
+  eyeColor: string;
+  hair: {
     color: string;
     type: string;
   };
-  ip?: string;
+  ip: string;
 };
+
 
 export const useAppContext = () => {
   const [fetchedEmployees, setFetchedEmployees] = useState<Employee[]>([]);
@@ -49,28 +50,22 @@ export const useAppContext = () => {
     }
   };
 
-  const updateEmployees = async (id: number, updatedData: Employee) => {
-    try {
-      const res = await fetch(`https://dummyjson.com/users/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedData)
-      });
-      
-      if (!res.ok) throw new Error("Cannot update employee");
+ // paginacja
+  // const fetchEmployeesLimit = async () => {
 
-      const updatedEmployee = await res.json();
+  //   try {
+  //     const res = await fetch('http://dummyjson.com/users?limit=5&skip=10&select=firstName,age');
+  //     if (!res.ok) throw new Error("Cannot fetch employee");
 
-      setFetchedEmployees((prev) => (
-        prev.map((employee) => (
-          employee.id === id ? { ...employee, ...updatedEmployee } : employee
-        ))
-      ));
+  //     const { users } = await res.json();
 
-    } catch (error) {
-      console.error("Error updating employee:", error);
-    }
-  };
+  //     if (users) setEmployees(users);
+  //     console.log(users)
+
+  //   } catch (e) {
+  //     console.log(e)
+  //   }
+  // }
 
   useEffect(() => {
     fetchEmployees();
@@ -79,7 +74,6 @@ export const useAppContext = () => {
   return {
     isLoading,
     fetchedEmployees,
-    updateEmployees
   };
 };
 
