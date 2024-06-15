@@ -26,22 +26,22 @@ function App() {
       <button onClick={changeLanguage}>
         <span>{i18n.language}</span>
       </button>
-    <div className="app">
-      <div className="sidebar">
-      <Nav />
+      <div className="app">
+        <div className="sidebar">
+          <Nav />
+        </div>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* <Route path="/user-form" element={<UserForm />} /> */}
+            <Route path="/user-list" element={<UserList />} />
+            <Route path="/user-list/:userID" element={<UserDetails />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/add-new-worker" element={<AddNewWorker />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <div className="content">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/user-form" element={<UserForm />} /> */}
-        <Route path="/user-list" element={<UserList />} />
-        <Route path="/user-list/:userID" element={<UserDetails />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/add-new-worker" element={<AddNewWorker />} />
-      </Routes>
-      <Footer />
-      </div>
-    </div>
     </div>
   );
 }

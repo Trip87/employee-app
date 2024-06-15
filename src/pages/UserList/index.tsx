@@ -10,9 +10,8 @@ import { Employee } from '../../Context/hooks/useAppContext';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 
-
 const UserList = () => {
-  const { employees } = useContext(AppContext);
+  const { fetchedEmployees } = useContext(AppContext);
   const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
@@ -36,15 +35,16 @@ const UserList = () => {
   return (
     <div className="user-list">
       <header className="user-list__header">
-        <h2 className="user-list__title">{t( "app.nav.employee-list")}</h2>
+        <h2 className="user-list__title">{t("app.nav.employee-list")}</h2>
         <h2 className="user-list__title">USER LIST</h2>
         <Button
+          onClick={handleAddEmployee}
           variant="primary"
           height="large"
           label={
             <>
               <FontAwesomeIcon icon={faPlus} />
-              &nbsp;Add new emplyees
+              &nbsp;Add new employees
             </>
           }
         />
@@ -59,17 +59,9 @@ const UserList = () => {
         <p>{t("app.user-list.desc")}</p>
         <p>{t("app.user-list.desc")}</p>
         <p>{t("app.user-list.view")}</p>
-        <p>Image</p>
-        <p>Name</p>
-        <p>Birth Date</p>
-        <p>Email</p>
-        <p>Phone</p>
-        <p>desc</p>
-        <p>desc</p>
-        <p>view</p>
       </Card>
       <ul className="user-list__items">
-        {employees.map((employee) => (
+        {fetchedEmployees.map((employee) => (
           <li key={employee.id} className="user-list__item">
             <Card className="user-list__card">
               <img
@@ -83,17 +75,15 @@ const UserList = () => {
               <p className="user-list__description">{employee.birthDate}</p>
               <p className="user-list__description">{employee.email}</p>
               <p className="user-list__description">{employee.phone}</p>
-
               <p className="user-list__description">lorem </p>
               <p className="user-list__description">lorem </p>
               <Button
                 onClick={() => openModal(employee)}
                 className="user-list__btn"
-                label="Viev"
+                label="View"
                 variant="primary"
                 height="large"
               />
-              {/* {showModal && <Modal firstName={employee.firstName} lastName={employee.lastName} onClose={closeModal} />} */}
             </Card>
           </li>
         ))}
@@ -102,7 +92,6 @@ const UserList = () => {
       {showModal && selectedEmployee && (
         <Modal
           {...selectedEmployee}
-
           onClose={closeModal}
         />
       )}
