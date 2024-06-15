@@ -11,43 +11,41 @@ import Button from "../Button/Button";
 const Nav = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => false);
   const { t } = useTranslation();
-    
-    return (
-      <div>
-        <nav className="">
-          <ul className="nav">
-            <DarkModeToggle
-              onChange={setIsDarkMode}
-              checked={isDarkMode}
-              size={80}
-            />
+  
+  return (
+    <div>
+      <nav className="">
+        <ul className="nav">
+          <DarkModeToggle
+            onChange={setIsDarkMode}
+            checked={isDarkMode}
+            size={80}
+          />
 
-   
-            <Link
-              to="/"
-              className="button button--primary button--content button--large btn"
-            >
-              {t("app.home")}
-            </Link>
+          <Link
+            to="/"
+            className="button button--primary button--content button--large btn"
+          >
+            {t("app.home")}
+          </Link>
 
-            <Link
-              to="/user-list"
-              className="button button--primary button--content button--large btn"
-            >
-              {t("app.employee-list")}
-            </Link>
+          <Link
+            to="/user-list"
+            className="button button--primary button--content button--large btn"
+          >
+            {t("app.employee-list")}
+          </Link>
 
-            <Link
-              to="/add-new-worker"
-              className="button button--primary button--content button--large btn"
-            >
-              {t("app.new-employee")}
-            </Link>
-          </ul>
-        </nav>
-      </div>
-    );
-  };
-
+          <Link
+            to="/add-new-worker"
+            className="button button--primary button--content button--large btn"
+          >
+            {t("app.new-employee")}
+          </Link>
+        </ul>
+      </nav>
+    </div>
+  );
+};
 
 export default Nav;

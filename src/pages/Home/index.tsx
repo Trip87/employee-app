@@ -36,7 +36,6 @@ const Home = () => {
   return (
     <div>
       <Main />
-
       <div className="carousel-container">
         <Carousel responsive={responsive}>
           {employees.map((employee) => (

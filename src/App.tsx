@@ -9,6 +9,7 @@ import UserDetails from "./pages/UserDetails";
 import AddNewWorker from "./pages/AddNewWorker";
 import { useTranslation } from "react-i18next";
 import Footer from "./components/Footer";
+import Main from "./components/Main";
 
 export enum Locale {
   EN = "en",
@@ -31,7 +32,7 @@ function App() {
       </button>
       </div>
       <div className="content">
-     
+      
         
       <Routes>
         <Route path="/" element={<Home />} />
