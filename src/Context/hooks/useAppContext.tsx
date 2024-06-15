@@ -76,10 +76,29 @@ export const useAppContext = () => {
     fetchEmployees();
   }, []);
 
+
+  const deleteEmployee = async (id: number) => {
+    try {
+      const res = await fetch(`https://dummyjson.com/users/${id}`, {
+        method: 'DELETE'
+      });
+
+      if (!res.ok) throw new Error("Cannot delete employee");
+
+      setFetchedEmployees(prevEmployees =>
+        prevEmployees.filter(employee => employee.id !== id)
+      );
+
+    } catch (error) {
+      console.error("Error deleting employee:", error);
+    }
+  };
+
   return {
     isLoading,
     fetchedEmployees,
-    updateEmployees
+    updateEmployees,
+    deleteEmployee,
   };
 };
 

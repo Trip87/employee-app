@@ -14,7 +14,7 @@ import Loader from '../../components/Loader/Loader';
 const UserList = () => {
  
   const { fetchedEmployees } = useContext(AppContext);
-  const { employees, setEmployees, isLoading } = useContext(AppContext);
+  const { employees, setEmployees, isLoading, deleteEmployee } = useContext(AppContext);
   const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
@@ -37,8 +37,7 @@ const UserList = () => {
   };
 
   const handleDeleteEmployee = (id: number) => {
-    const newEmployees = employees.filter((employee) => employee.id!== id);
-    setEmployees(newEmployees);
+    deleteEmployee(id);
   };
 
   return (
