@@ -4,7 +4,6 @@ import { AppContext } from '../../Context/AppContext';
 import { Employee } from '../../Context/hooks/useAppContext';
 import './AddNewWorker.scss';
 import { t } from 'i18next';
-
 const AddNewWorker: React.FC = () => {
   const { employees, setEmployees } = useContext(AppContext);
   const [employee, setEmployee] = useState<Employee>({
@@ -35,18 +34,28 @@ const AddNewWorker: React.FC = () => {
     ip: '',
   });
   const navigate = useNavigate();
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setEmployee({ ...employee, [name]: value });
+    if (name === 'address' || name === 'city') {
+      setEmployee(prevState => ({
+        ...prevState,
+        address: {
+          ...prevState.address,
+          [name]: value,
+        },
+      }));
+    } else {
+      setEmployee(prevState => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setEmployees([...employees, employee]);
     navigate('/user-list');
   };
-
   return (
     <div className="add-worker">
       <h2 className="add-worker__title">{t("app.new-employee")}</h2>
@@ -64,6 +73,4 @@ const AddNewWorker: React.FC = () => {
     </div>
   );
 };
-
 export default AddNewWorker;
-
