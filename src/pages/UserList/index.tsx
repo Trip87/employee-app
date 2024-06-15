@@ -9,10 +9,11 @@ import Modal from '../../components/Modal';
 import { Employee } from '../../Context/hooks/useAppContext';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
+import Loader from '../../components/Loader/Loader';
 
 
 const UserList = () => {
-  const { employees, setEmployees } = useContext(AppContext);
+  const { employees, setEmployees, isLoading } = useContext(AppContext);
   const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
@@ -66,6 +67,7 @@ const UserList = () => {
         <p>{t("app.view")}</p>
       
       </Card>
+      { isLoading ? <Loader /> :
       <ul className="user-list__items">
         {employees.map((employee) => (
           <li key={employee.id} className="user-list__item">
@@ -103,7 +105,7 @@ const UserList = () => {
           </li>
         ))}
       </ul>
-
+}
       {showModal && selectedEmployee && (
         <Modal
           {...selectedEmployee}
