@@ -1,10 +1,12 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import useFetchEmployees, { Employee } from "./hooks/useAppContext";
 
 type EmployeeContextType = {
   employees: Employee[];
   isLoading: boolean;
   setEmployees: React.Dispatch<React.SetStateAction<Employee[]>>;
+  updateEmployees: (id: number, updateData: Employee) => void;
+  fetchedEmployees: Employee[];
 };
 
 export const AppContext = createContext<EmployeeContextType>(
@@ -16,17 +18,19 @@ type Props = {
 };
 
 export const AppContextProvider = ({ children }: Props) => {
-  const { fetchedEmployees, isLoading } = useFetchEmployees();
+  const { fetchedEmployees, isLoading, updateEmployees } = useFetchEmployees();
   const [employees, setEmployees] = useState<Employee[]>([]);
-
+  
   useEffect(() => {
     if (fetchedEmployees.length > 0) {
       setEmployees(fetchedEmployees);
     }
   }, [fetchedEmployees.length]);
 
+
+
   return (
-    <AppContext.Provider value={{ employees, isLoading, setEmployees }}>
+    <AppContext.Provider value={{ employees, isLoading, setEmployees, updateEmployees, fetchedEmployees }}>
       {children}
     </AppContext.Provider>
   );
