@@ -42,7 +42,6 @@ const UserList = () => {
   return (
     <div className="user-list">
       <header className="user-list__header">
-        <h2 className="user-list__title">{t( "app.employee-list")}</h2>
         <h2 className="user-list__title">{t("app.nav.employee-list")}</h2>
         <h2 className="user-list__title">USER LIST</h2>
         <Button

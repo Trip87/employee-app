@@ -10,7 +10,6 @@ import AddNewWorker from "./pages/AddNewWorker";
 import { useTranslation } from "react-i18next";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
-// import Search from "./components/Search";
 export enum Locale {
   EN = "en",
   PL = "pl",
@@ -24,28 +23,27 @@ function App() {
   return (
 
     <div className="App">
-      
-     
-    <div className="app">
-      <div className="sidebar">
-      <Nav />
-      <button className="language-btn button  button--content button--large btn"onClick={changeLanguage}>
-        <span>{i18n.language}</span>
-      </button>
+
+
+      <div className="app">
+        <div className="sidebar">
+          <Nav />
+          <button className="language-btn button  button--content button--large btn" onClick={changeLanguage}>
+            <span>{i18n.language}</span>
+          </button>
+        </div>
+        <div className="content">
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/user-list" element={<UserList />} />
+            <Route path="/user-list/:userID" element={<UserDetails />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/add-new-worker" element={<AddNewWorker />} />
+          </Routes>
+          <Footer />
+        </div>
       </div>
-      <div className="content">
-        
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/user-form" element={<UserForm />} /> */}
-        <Route path="/user-list" element={<UserList />} />
-        <Route path="/user-list/:userID" element={<UserDetails />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/add-new-worker" element={<AddNewWorker />} />
-      </Routes>
-      <Footer />
-      </div>
-    </div>
     </div>
   );
 }

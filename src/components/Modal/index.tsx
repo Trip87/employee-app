@@ -159,53 +159,7 @@ const Modal = ({
             <p><b> {t("app.eye-color")}:</b> {eyeColor}</p>
           </div>
 
-          {/* <div className="modal__section-box modal__section-box--full-width">
-            <form className='modal__form'> </form>
-            <label htmlFor="firstName">
-              <input id='firstName' type="text" />
-            </label>
-
-            <label htmlFor="lastName">
-              {t("app.last-name")}:
-              <input id='lastName' type="text" />
-            </label>
-
-            <label htmlFor="email">
-              {t("app.email")}:
-              <input id='email' type="text" />
-            </label>
-
-            <label htmlFor="password">
-              {t("app.password")}:
-              <input id='password' type="text" />
-            </label>
-
-            <label htmlFor="phone">
-              {t("app.phone")}:
-              <input id='phone' type="text" />
-            </label>
-
-            <label htmlFor="address">
-              {t("app.address")}:
-              <input id='address' type="text" />
-            </label>
-
-            <label htmlFor="city">
-              {t("app.city")}:
-              <input id='city' type="text" />
-            </label>
-
-            <label htmlFor="hairColor">
-              {t("app.hair-color")}:
-              <input id='hairColor' type="text" />
-            </label>
-
-            <label htmlFor="weight">
-              {t("app.weight")}:
-              <input id='weight' type="text" />
-            </label>
-          </div> */}
-
+    
 
           <div className="edit-worker">
             <h2 className="edit-worler__title">Edytuj Pracownika</h2>
@@ -224,6 +178,7 @@ const Modal = ({
             </form>
           </div>
 
+          <Button label='Close' onClick={onClose} />
 
           <Button label={t("app.close")} onClick={onClose} />
         </section>
@@ -235,4 +190,4 @@ const Modal = ({
   ) : null;
 };
 
-export default Modal
+export default Modal;
