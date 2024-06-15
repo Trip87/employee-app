@@ -10,10 +10,16 @@ import { Employee } from '../../Context/hooks/useAppContext';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import Loader from '../../components/Loader/Loader';
+<<<<<<< HEAD
 
 const UserList = () => {
  
   const { fetchedEmployees } = useContext(AppContext);
+=======
+
+
+const UserList = () => {
+>>>>>>> d2a5e99c9706f601c10da789ca6c5f298cba0cb8
   const { employees, setEmployees, isLoading } = useContext(AppContext);
   const navigate = useNavigate();
 
