@@ -7,14 +7,13 @@ const EmployeeList = () => {
   return (
     <div>
       <ul>
-        {employees.map(({id, firstName, lastName}) => (
+        {employees.map(({ id, firstName, lastName }) => (
           <li key={id}>
             {firstName} {lastName}
           </li>
         ))}
       </ul>
     </div>
-      
   );
 };
 
