@@ -1,5 +1,4 @@
 import { useContext } from "react";
-
 import { AppContext } from "../../Context/AppContext";
 
 const EmployeeList = () => {
@@ -8,7 +7,7 @@ const EmployeeList = () => {
   return (
     <div>
       <ul>
-        {employees.map(({id, firstName, lastName}) => (
+        {employees.map(({ id, firstName, lastName }) => (
           <li key={id}>
             {firstName} {lastName}
           </li>
