@@ -37,5 +37,8 @@ export default {
     "app.user-details": "User details",
     "app.see-more": "See more",
     "app.delete": "Delete",
+    "app.main.title":"Efficient Employee Management Platform",
+    "app.main.description": 
+    "Explore modern personnel management with our platform: we provide intuitive tools for efficient employee data entry, editing, and monitoring.",
   },
 };

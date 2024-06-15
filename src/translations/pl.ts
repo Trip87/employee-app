@@ -37,5 +37,7 @@ export default {
     "app.user-details": "Szczegóły użytkownika",
     "app.see-more": "Zobacz więcej",
     "app.delete": "Usuń",
+    "app.main.title":"Platforma zarządzania pracownikami",
+    "app.main.description":"Odkryj nowoczesne zarządzanie personelem z naszą platformą: oferujemy intuicyjne narzędzia do efektywnego dodawania, edycji i monitorowania danych pracowników.",
   },
 };

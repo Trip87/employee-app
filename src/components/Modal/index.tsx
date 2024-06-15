@@ -128,7 +128,7 @@ const Modal = ({
   return modalRoot ? ReactDOM.createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <h2 className='modal__title'><b>{t("app.modal.full-name")} </b>{firstName} {lastName}</h2>
+        <h2 className='modal__title'><b>{t("app.full-name")} </b>{firstName} {lastName}</h2>
         <section className='modal__section'>
           <div className='modal__section-box'>
             <img src={image} alt={firstName} />
