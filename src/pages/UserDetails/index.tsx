@@ -1,6 +1,7 @@
 import Card from "../../components/Card/Card";
 import Button from "../../components/Button/Button";
 import './index.scss';
+import { t } from "i18next";
 
 const UserDetails = () => {
 
@@ -10,10 +11,10 @@ const UserDetails = () => {
   return (
     <section>
       <Card className=''>
-        <h2>User Details</h2>
-        <p>FirstName LastName</p>
-        <p>Zawód</p>
-        <Button label="Zobacz więcej" onClick={handleClick} className="button-view" />
+        <h2>{t("app.user-details")}</h2>
+        <p>{t("app.first-name")} {t("app.last-name")}</p>
+        <p>{t( "app.profession")}</p>
+        <Button label={t("app.see-more")} onClick={handleClick} className="button-view" />
       </Card>
     </section>
   );

@@ -42,37 +42,29 @@ const UserList = () => {
   return (
     <div className="user-list">
       <header className="user-list__header">
-        <h2 className="user-list__title">{t( "app.nav.employee-list")}</h2>
-        <h2 className="user-list__title">USER LIST</h2>
+        <h2 className="user-list__title">{t( "app.employee-list")}</h2>
         <Button
           variant="primary"
           height="large"
           label={
             <>
               <FontAwesomeIcon icon={faPlus} />
-              &nbsp;Add new emplyees
+              &nbsp;{t( "app.new-employee")}
             </>
           }
         />
       </header>
 
       <Card className="user-list__card--header">
-        <p>{t("app.user-list.image")}</p>
-        <p>{t("app.user-list.name")}</p>
-        <p>{t("app.user-list.birth-date")}</p>
-        <p>{t("app.user-list.email")}</p>
-        <p>{t("app.user-list.phone")}</p>
-        <p>{t("app.user-list.desc")}</p>
-        <p>{t("app.user-list.desc")}</p>
-        <p>{t("app.user-list.view")}</p>
-        <p>Image</p>
-        <p>Name</p>
-        <p>Birth Date</p>
-        <p>Email</p>
-        <p>Phone</p>
-        <p>desc</p>
-        <p>desc</p>
-        <p>view</p>
+        <p>{t("app.image")}</p>
+        <p>{t("app.name")}</p>
+        <p>{t("app.birth-date")}</p>
+        <p>{t("app.email")}</p>
+        <p>{t("app.phone")}</p>
+        <p>{t("app.desc")}</p>
+        <p>{t("app.desc")}</p>
+        <p>{t("app.view")}</p>
+      
       </Card>
       <ul className="user-list__items">
         {employees.map((employee) => (
@@ -95,14 +87,14 @@ const UserList = () => {
               <Button
                 onClick={() => openModal(employee)}
                 className="user-list__btn"
-                label="View"
+                label={t( "app.view")}
                 variant="primary"
                 height="large"
               />
                <Button
                 onClick={() => handleDeleteEmployee(employee.id)}
                 className="user-list__delete-btn"
-                label="Delete"
+                label={t("app.delete")}
                 variant="primary"
                 height="large"
               />

@@ -14,7 +14,7 @@ const Nav = () => {
 
   const Nav = () => {
     const [isDarkMode, setIsDarkMode] = useState(() => false);
-
+    
     return (
       <div>
         <nav className="">
@@ -25,25 +25,26 @@ const Nav = () => {
               size={80}
             />
 
+   
             <Link
               to="/"
               className="button button--primary button--content button--large btn"
             >
-              {t("app.nav.home")}
+              {t("app.home")}
             </Link>
 
             <Link
               to="/user-list"
               className="button button--primary button--content button--large btn"
             >
-              {t("app.nav.employee-list")}
+              {t("app.employee-list")}
             </Link>
 
             <Link
               to="/add-new-worker"
               className="button button--primary button--content button--large btn"
             >
-              {t("app.nav.new-employee")}
+              {t("app.new-employee")}
             </Link>
           </ul>
         </nav>
@@ -62,19 +63,19 @@ const Nav = () => {
           
             
             <Link to="/" className="button button--primary button--content button--large btn">
-            {t("app.nav.home")}
+            {t("app.home")}
             </Link>
 
           
           
           <Link to="/user-list" className="button button--primary button--content button--large btn" >
-          {t("app.nav.employee-list")}
+          {t("app.employee-list")}
              </Link>
             
           
             
           <Link to="/add-new-worker" className="button button--primary button--content button--large btn">
-          {t("app.nav.new-employee")}
+          {t("app.new-employee")}
              </Link>
 
           

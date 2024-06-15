@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import React, { useState } from "react";
 
 type Employee = {
@@ -27,7 +28,7 @@ const Search: React.FC<SearchProps> = ({ employees, setFilteredData }) => {
     <div>
       <input
         type="text"
-        placeholder="Search..."
+        placeholder={t("app.search")}
         value={searchTerm}
         onChange={handleChange}
       />
