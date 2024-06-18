@@ -1,35 +1,45 @@
 import { t } from "i18next";
 import React, { useState } from "react";
+import { Employee } from "../../Context/hooks/useAppContext";
+import "./index.scss";
+import { FaSearch } from "react-icons/fa";
+import useContext from "../../Context/AppContext";
+import "./index.scss";
 
-type Employee = {
-  id: number;
-  name: string;
-};
-
-type SearchProps = {
+export type SearchProps = {
   employees: Employee[];
-  setFilteredData: (value: React.SetStateAction<Employee[]>) => void;
+  setResults: React.Dispatch<React.SetStateAction<Employee[]>>;
 };
 
-const Search: React.FC<SearchProps> = ({ employees, setFilteredData }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+const Search: React.FC<SearchProps> = ({ employees, setResults }) => {
+  // const { AppContext } = useContext(AppContext);
+  const [input, setInput] = useState("");
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setSearchTerm(value);
+  const fetchEmployees = (value: string) => {
+    const results = employees.filter((user) => {
+      return (
+        value &&
+        user &&
+        user.firstName &&
+        user.firstName.toLowerCase().includes(value.toLowerCase())
+      );
+    });
+    setResults(results);
+  };
 
-    const filtered = employees.filter((employee) =>
-      employee.name.toLowerCase().includes(value.toLowerCase())
-    );
-    setFilteredData(filtered);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInput(value);
+    fetchEmployees(value);
   };
 
   return (
-    <div>
+    <div className="input-wrapper">
+      <FaSearch id="search-icon" />
       <input
         type="text"
         placeholder={t("app.search")}
-        value={searchTerm}
+        value={input}
         onChange={handleChange}
       />
     </div>
