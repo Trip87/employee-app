@@ -31,6 +31,14 @@ function App() {
         <span>{i18n.language}</span>
       </button>
       </div>
+      <div className="hamburger">
+        <div className="wrapper">
+          <Nav />
+          <button className="language-btn button  button--content button--large btn"onClick={changeLanguage}>
+            <span>{i18n.language}</span>
+          </button>
+        </div>
+      </div>
       <div className="content">
       
         

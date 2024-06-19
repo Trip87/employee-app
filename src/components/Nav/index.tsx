@@ -16,32 +16,37 @@ const Nav = () => {
     <div>
       <nav className="">
         <ul className="nav">
-          <DarkModeToggle
-            onChange={setIsDarkMode}
-            checked={isDarkMode}
-            size={80}
-          />
-
-          <Link
-            to="/"
-            className="button button--primary button--content button--large btn"
-          >
-            {t("app.home")}
-          </Link>
-
-          <Link
-            to="/user-list"
-            className="button button--primary button--content button--large btn"
-          >
-            {t("app.employee-list")}
-          </Link>
-
-          <Link
-            to="/add-new-worker"
-            className="button button--primary button--content button--large btn"
-          >
-            {t("app.new-employee")}
-          </Link>
+          <li>
+            <DarkModeToggle
+              onChange={setIsDarkMode}
+              checked={isDarkMode}
+              size={80}
+            />
+          </li>
+          <li>
+            <Link
+              to="/"
+              className="button button--primary button--content button--large btn"
+            >
+              {t("app.home")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/user-list"
+              className="button button--primary button--content button--large btn"
+            >
+              {t("app.employee-list")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/add-new-worker"
+              className="button button--primary button--content button--large btn"
+            >
+              {t("app.new-employee")}
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
